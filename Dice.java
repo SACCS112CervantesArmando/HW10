@@ -27,4 +27,4 @@ public class Dice {
 		return Roll3;
 	}
 }
-
+// THis works, but please try one WITHOUT static methods, and WITH constructors
