@@ -4,8 +4,8 @@ import java.util.Scanner;
 public class DiceDisplayMessage {
 	
 
-	
-	
+
+
 //constructor
 public DiceDisplayMessage()
 
@@ -15,11 +15,14 @@ public DiceDisplayMessage()
 }
 
 
-	public void displayMessage()
+	public void displayMessage(Object Roll1, Object Roll2, Object Roll3)
 	
 	{ 
 		Scanner input = new Scanner(System.in);
-		
+
+		Dice R1 = new Dice(Roll1, 0, 0);
+		Dice R2 = new Dice(Roll2, 0, 0);
+		Dice R3 = new Dice(Roll3, 0, 0);
 		
 		String Answer;
 		int Answer2;
@@ -45,39 +48,41 @@ public DiceDisplayMessage()
 				case 1: System.out.print("Guess a Number between 1-6.");//rolling 1 die.
 						Guess = input.nextInt();	// stores number player guessed.
 					
-						if (Guess == Dice.DiceRoll1()) //player guess and random die roll match, player wins.
+						
+						if (Guess == R1.Roll1) //player guess and random die roll match, player wins.
 						{
 							System.out.print("you guessed correct!" );
 						}
-						else if (Guess != Dice.DiceRoll1())
+						else
 							
-				   	 		System.out.print("you guessed wrong!");
+				   	 		System.out.printf("%s%d%s"," The computer chose ",Roll1," you guessed wrong!");
 						
 				break;
 				case 2: System.out.print("Guess a number between 2-12.");//rolling 2 dice.
 				  		Guess2 = input.nextInt();
 					
-				   	 	if (Guess2 == Dice.DiceRoll2())
+				   	 	if (Guess2 == R2.Roll2)
 				   	 	{
 				   	 		System.out.print("you guessed correct!");
 				   	 		
 				   	 		
 				   	 	}
 				   	 	else
-				   	 		System.out.print("you guessed wrong!");
+				   	 		System.out.printf("%s%d%s"," The computer chose ",Roll2," you guessed wrong!");
 				
 				break;
 				case 3: System.out.print("Guess a number between 3-18.");//rolling 3 dice.
 						Guess3 = input.nextInt();
 						
 						
-						if(Guess3 == Dice.DiceRoll3())
+				 
+						if(Guess3 == R3.Roll3)
 						{
 							System.out.print("you guessed correct!");
 						}
 						
 						else
-				   	 		System.out.print("you guessed wrong!");
+				   	 		System.out.printf("%s%d%s"," The computer chose ",Roll3," you guessed wrong!");
 				
 				}
 				
