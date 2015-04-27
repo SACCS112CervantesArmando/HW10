@@ -22,4 +22,4 @@ public class Dice {
 	
 	
 }
-
+// THis works, but please try one WITHOUT static methods, and WITH constructors
